@@ -28,9 +28,9 @@ https://darksky.net/
 - mapbox
 https://account.mapbox.com/
 
-insert your key instead of  'YOURTOKEN'. 
+insert your keys as command line arguments.
 
 run ```npm install```
 
-then ``` node app.js```
+then ``` node app.js DARKSKY_KEY MAPBOX_KEY```
 
