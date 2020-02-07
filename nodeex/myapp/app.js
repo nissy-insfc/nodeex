@@ -7,8 +7,8 @@ app.get('/',function(req,res){
 	res.send('root');
 });
 
-app.get('/about',function(req,res){
-	res.send('about');
+app.get('/users/:userId/books/:bookId',function(req,res){
+	res.send('Your ID is '+req.params.userId+' and book ID is '+req.params.bookId);
 });
 
 
