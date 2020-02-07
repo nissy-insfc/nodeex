@@ -4,12 +4,13 @@ const app = express();
 //app.get('/',(req,res) => res.send('Hello world!'));
 
 app.get('/',function(req,res){
-	res.send('GET request to the page');
+	res.send('root');
 });
 
-app.post('/',function(req,res){
-	res.send('POST request to the page');
+app.get('/about',function(req,res){
+	res.send('about');
 });
+
 
 app.listen(3000, () => console.log('Example app listening on the port 3000!'));
 
