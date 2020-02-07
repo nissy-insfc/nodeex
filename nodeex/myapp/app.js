@@ -1,16 +1,25 @@
 const express = require('express');
 const app = express();
 
-
+/*
 var mylogger = function(req,res,next){
 	console.log('LOGGED');
 	next();
 }
+*/
 
-app.use(mylogger);
+var requestTime = function(req,res,next){
+	req.requestTime = Date.now();
+	next();
+}
+
+
+app.use(requestTime);
 
 app.get('/',function(req,res){
-	res.send('root');
+	var responseText = 'Hello World!<br>';
+	responseText += 'requested at:' + req.requestTime;
+	res.send(responseText);
 });
 
 /*
