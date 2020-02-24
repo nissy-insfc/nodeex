@@ -9,9 +9,11 @@ app.get('/' , function(req, res){
 });
 
 io.on('connection',function(socket){
-        console.log('connected');
+    socket.on('message',function(msg){
+        console.log('message: ' + msg);
+        io.emit('message', msg);
+    });
 });
-
 
 http.listen(PORT, function(){
       console.log('server listening. Port:' + PORT);
